@@ -2,7 +2,9 @@
 
 Updated: 3/28/2018
 
-This is an attempt to write a working BSIM-CMG model in Python. Currently DC only. Also, RDSMOD = 0 only.
+Python version: v3.6.4
+
+This is an attempt to write a working BSIM-CMG model in Python. Currently DC and RDSMOD = 0 only.
 
 ## Usage
 Step 1: Add or modify model and instance parameters in 'modelcard.l'

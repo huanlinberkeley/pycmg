@@ -13,7 +13,7 @@ Step 2: Run 'test.py' and see results.
 
 Note: You can compare the results with commercial simulators like HSPICE.
 
-Please help me debug this tool. Send feedback to huanlin@berkeley.edu
+Please help me debug this tool. Send feedback to `huanlinberkeley@gmail.com`
 
 ## Example modelcard.l
 vd = 1.0  

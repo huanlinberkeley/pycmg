@@ -1,6 +1,7 @@
-from math import log, exp, sqrt, tan, cosh, tanh
+import re
+from math import *
 
-class BSIMCMG():
+class BSIMCMG:
     """
     A BSIM-CMG version 110.0.0 model in Python. Model package can be downloaded at
     http://bsim.berkeley.edu/BSIMCMG/BSIMCMG110.0.0_20160101.tar.gz
@@ -2484,3 +2485,22 @@ class BSIMCMG():
             ib_tot = 0.0
 
         return [id_tot, ig_tot, is_tot, ib_tot]
+
+def read_mdl(file):
+    mdl = {}
+    with open(file,'r') as f:
+        lines = f.read().splitlines()
+    for line in lines:
+        param, value = re.split('[=\s]+', line)
+        mdl[param] = float(value)
+    return mdl
+
+filepath = "modelcard.l"
+param = read_mdl(filepath)
+
+Id, Ig, Is, Ib = BSIMCMG(**param).calc()
+
+print(f'Id = {Id:>16.9e} A')
+print(f'Ig = {Ig:>16.9e} A')
+print(f'Is = {Is:>16.9e} A')
+print(f'Ib = {Ib:>16.9e} A')
